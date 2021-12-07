@@ -6,4 +6,5 @@ Dockerfile*
 docker-compose*
 LICENSE
 .vscode
+.env
 

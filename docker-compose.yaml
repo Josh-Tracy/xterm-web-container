@@ -1,0 +1,18 @@
+# Version of Docker compose file
+version: "3.1"
+
+services:
+# Defining the service
+  xterm:
+# Defining the base image to be used 
+    image: xterm-web-app/nodejs:latest
+    hostname: localhost
+    container_name: xterm-node-js
+# Defining the environmental variable
+    environment:
+      # ENVIRONMET_VARIABLE_NAME: "environment variable value" 
+      - USERNAME=${REMOTE_USERNAME}
+      - PASSWORD=${REMOTE_PASSWORD}
+      - HOST=${REMOTE_HOST}
+    ports:
+      - 8000:8000

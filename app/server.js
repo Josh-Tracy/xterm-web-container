@@ -51,10 +51,10 @@ io.on('connection', function(socket) {
   }).on('error', function(err) {
     socket.emit('data', '\r\n*** SSH CONNECTION ERROR: ' + err.message + ' ***\r\n');
   }).connect({
-    host: '',
+    host: 'process.env.REMOTE_HOST',
     port: 22,
-    username: '',
-    password: ''
+    username: 'process.env.REMOTE_USERNAME',
+    password: 'process.env.REMOTE_PASSWORD'
     //privateKey: require('fs').readFileSync('path/to/keyfile')
   });
 });
